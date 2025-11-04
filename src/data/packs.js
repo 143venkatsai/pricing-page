@@ -7,9 +7,9 @@ const packs = [
     originalPrice: "₹4,499",
     discount: "33% OFF",
     companies: [
-      { id: 1, url: "src/assets/microsoft.png", alt: "Microsoft" },
-      { id: 2, url: "src/assets/amazon.png", alt: "Amazon" },
-      { id: 3, url: "src/assets/google.png", alt: "Google" },
+      { id: 1, url: "/microsoft.png", alt: "Microsoft" },
+      { id: 2, url: "/amazon.png", alt: "Amazon" },
+      { id: 3, url: "/google.png", alt: "Google" },
     ],
   },
   {
@@ -20,9 +20,9 @@ const packs = [
     originalPrice: "₹4,499",
     discount: "33% OFF",
     companies: [
-      { id: 1, url: "src/assets/microsoft.png", alt: "Microsoft" },
-      { id: 2, url: "src/assets/amazon.png", alt: "Amazon" },
-      { id: 3, url: "src/assets/google.png", alt: "Google" },
+      { id: 1, url: "/microsoft.png", alt: "Microsoft" },
+      { id: 2, url: "/amazon.png", alt: "Amazon" },
+      { id: 3, url: "/google.png", alt: "Google" },
     ],
   },
   {
@@ -33,9 +33,9 @@ const packs = [
     originalPrice: "₹4,499",
     discount: "33% OFF",
     companies: [
-      { id: 1, url: "src/assets/microsoft.png", alt: "Microsoft" },
-      { id: 2, url: "src/assets/amazon.png", alt: "Amazon" },
-      { id: 3, url: "src/assets/google.png", alt: "Google" },
+      { id: 1, url: "/microsoft.png", alt: "Microsoft" },
+      { id: 2, url: "/amazon.png", alt: "Amazon" },
+      { id: 3, url: "/google.png", alt: "Google" },
     ],
   },
   {
@@ -46,9 +46,9 @@ const packs = [
     originalPrice: "₹4,499",
     discount: "33% OFF",
     companies: [
-      { id: 1, url: "src/assets/microsoft.png", alt: "Microsoft" },
-      { id: 2, url: "src/assets/amazon.png", alt: "Amazon" },
-      { id: 3, url: "src/assets/google.png", alt: "Google" },
+      { id: 1, url: "/microsoft.png", alt: "Microsoft" },
+      { id: 2, url: "/amazon.png", alt: "Amazon" },
+      { id: 3, url: "/google.png", alt: "Google" },
     ],
   },
 ];

@@ -25,19 +25,19 @@ import pricingPlans from "../../data/pricingPlans";
 import packs from "../../data/packs";
 
 const companiesList = [
-  { id: 1, src: "src/assets/paytm.png", alt: "Paytm" },
-  { id: 2, src: "src/assets/netflix.png", alt: "Netflix" },
-  { id: 3, src: "src/assets/meta.png", alt: "Meta" },
-  { id: 4, src: "src/assets/microsoft.png", alt: "Microsoft" },
-  { id: 5, src: "src/assets/infosys.png", alt: "Infosys" },
-  { id: 6, src: "src/assets/google.png", alt: "Google" },
-  { id: 7, src: "src/assets/agh.png", alt: "Aptitude Guru Hem" },
-  { id: 8, src: "src/assets/amazon.png", alt: "Amazon" },
-  { id: 9, src: "src/assets/capgemini.png", alt: "Capegemini" },
-  { id: 10, src: "src/assets/wipro.png", alt: "Wipro" },
-  { id: 11, src: "src/assets/adobe.png", alt: "Adobe" },
-  { id: 12, src: "src/assets/flipkart.png", alt: "Flipkart" },
-  { id: 13, src: "src/assets/tcs.png", alt: "TCS" },
+  { id: 1, src: "/paytm.png", alt: "Paytm" },
+  { id: 2, src: "/netflix.png", alt: "Netflix" },
+  { id: 3, src: "/meta.png", alt: "Meta" },
+  { id: 4, src: "/microsoft.png", alt: "Microsoft" },
+  { id: 5, src: "/infosys.png", alt: "Infosys" },
+  { id: 6, src: "/google.png", alt: "Google" },
+  { id: 7, src: "/agh.png", alt: "Aptitude Guru Hem" },
+  { id: 8, src: "/amazon.png", alt: "Amazon" },
+  { id: 9, src: "/capgemini.png", alt: "Capegemini" },
+  { id: 10, src: "/wipro.png", alt: "Wipro" },
+  { id: 11, src: "/adobe.png", alt: "Adobe" },
+  { id: 12, src: "/flipkart.png", alt: "Flipkart" },
+  { id: 13, src: "/tcs.png", alt: "TCS" },
 ];
 
 const Pricing = () => {
@@ -45,12 +45,8 @@ const Pricing = () => {
   return (
     <>
       <PricingContainer>
-        <img src="src/assets/star.png" alt="vector" className="star-image" />
-        <img
-          src="src/assets/spiral.png"
-          alt="vector"
-          className="spiral-image"
-        />
+        <img src="/star.png" alt="vector" className="star-image" />
+        <img src="/spiral.png" alt="vector" className="spiral-image" />
         <div>
           <h1>
             Discover <span>Features</span>, <span>Choose</span> Your Plan
@@ -60,7 +56,7 @@ const Pricing = () => {
             <button>Explore Features</button>
           </ButtonsContainer>
         </div>
-        <img src="src/assets/LMS_image.png" alt="pricing" />
+        <img src="/LMS_image.png" alt="pricing" />
       </PricingContainer>
 
       <FeaturesContainer>
@@ -75,7 +71,7 @@ const Pricing = () => {
         </div>
 
         <FeaturesSectionOne>
-          <img src="src/assets/featureImage1.png" alt="feature" />
+          <img src="/featureImage1.png" alt="feature" />
           <SectionDetails>
             <h2 className="built">Built In Compiler</h2>
             <h1 className="section-heading">Code, Learn, and Create</h1>
@@ -99,7 +95,7 @@ const Pricing = () => {
               get instant feedback in a supportive learning environment.
             </p>
           </SectionDetails>
-          <img src="src/assets/featureImage2.png" alt="feature" />
+          <img src="/featureImage2.png" alt="feature" />
         </FeaturesSectionOne>
       </FeaturesContainer>
 
@@ -165,12 +161,8 @@ const Pricing = () => {
       </CompaniesSection>
 
       <PackContainer>
-        <img src="src/assets/star.png" alt="star" className="star-pack" />
-        <img
-          src="src/assets/packSpiral.png"
-          alt="spiral"
-          className="spiral-pack"
-        />
+        <img src="/star.png" alt="star" className="star-pack" />
+        <img src="/packSpiral.png" alt="spiral" className="spiral-pack" />
 
         <div>
           <h1>

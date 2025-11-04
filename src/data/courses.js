@@ -1,6 +1,6 @@
-import ai from "../assets/ai.png";
-import uiux from "../assets/uiux.png";
-import verbal from "../assets/verbal.png";
+import ai from "../../public/ai.png";
+import uiux from "../../public/uiux.png";
+import verbal from "../../public/verbal.png";
 
 const courses = [
   {
