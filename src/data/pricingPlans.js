@@ -1,0 +1,55 @@
+const pricingPlans = [
+  {
+    name: "Basic Plan",
+    description: "Best for short-term placement preparation",
+    originalPrice: "₹3,499",
+    regularPrice: "₹2,499",
+    discount: "28% OFF",
+    validity: "3 Months",
+    features: [
+      { text: "All features", enabled: true },
+      { text: "Only DSA, Core & Aptitude", enabled: true },
+      { text: "AI Doubt Support", enabled: true },
+      { text: "Biweekly Sessions", enabled: true },
+      { text: "Code Review", enabled: false },
+      { text: "Extra Premium Problems", enabled: false },
+    ],
+    recommended: false,
+  },
+  {
+    name: "Premium Plan",
+    description: "Most popular choice for serious learners",
+    originalPrice: "₹5,499",
+    regularPrice: "₹4,499",
+    discount: "18% OFF",
+    validity: "6 Months",
+    features: [
+      { text: "All features", enabled: true },
+      { text: "Only DSA, Core & Aptitude", enabled: true },
+      { text: "AI Doubt Support", enabled: true },
+      { text: "Biweekly Sessions", enabled: true },
+      { text: "Code Review", enabled: true },
+      { text: "Extra Premium Problems", enabled: true },
+    ],
+    recommended: true,
+  },
+  {
+    name: "Elite Plan",
+    description: "Best value preparation & all-round growth",
+    originalPrice: "₹7,499",
+    regularPrice: "₹6,499",
+    discount: "13% OFF",
+    validity: "1 Year",
+    features: [
+      { text: "All features", enabled: true },
+      { text: "Only DSA, Core & Aptitude", enabled: true },
+      { text: "AI Doubt Support", enabled: true },
+      { text: "Biweekly Sessions", enabled: true },
+      { text: "Code Review", enabled: true },
+      { text: "Extra Premium Problems", enabled: true },
+    ],
+    recommended: false,
+  },
+];
+
+export default pricingPlans;
