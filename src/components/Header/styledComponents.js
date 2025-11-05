@@ -117,30 +117,43 @@ export const StartButton = styled.button`
 export const MobileNavOverlay = styled.div`
   position: fixed;
   top: 60px;
-  left: 0;
   right: 0;
-  bottom: 0;
+  width: 100%;
+  // max-width: 320px;
+  height: calc(100vh - 60px);
   background-color: #ffffff;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  animation: fadeIn 0.3s ease forwards;
-  overflow-y: auto;
+  transform: translateX(100%);
+  animation: slideIn 0.3s ease forwards;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
 
-  @keyframes fadeIn {
+  @keyframes slideIn {
     from {
-      opacity: 0;
-      transform: translateY(-20px);
+      transform: translateX(100%);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
     }
   }
 
   @media (min-width: 769px) {
     display: none;
+  }
+
+  &.closing {
+    animation: slideOut 0.3s ease forwards;
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
   }
 `;
 

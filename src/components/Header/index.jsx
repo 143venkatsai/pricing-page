@@ -54,6 +54,19 @@ const navLinks = [
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+  const [closing, setClosing] = useState(false);
+
+  const handleToggle = () => {
+    if (toggle) {
+      setClosing(true);
+      setTimeout(() => {
+        setToggle(false);
+        setClosing(false);
+      }, 300); // match animation duration
+    } else {
+      setToggle(true);
+    }
+  };
 
   useEffect(() => {
     if (toggle) {
@@ -79,13 +92,13 @@ const Header = () => {
             {toggle ? (
               <FiX
                 size={30}
-                onClick={() => setToggle(false)}
+                onClick={handleToggle}
                 style={{ cursor: "pointer" }}
               />
             ) : (
               <FiMenu
                 size={30}
-                onClick={() => setToggle(true)}
+                onClick={handleToggle}
                 style={{ cursor: "pointer" }}
               />
             )}
@@ -98,11 +111,16 @@ const Header = () => {
       </HeaderContainer>
 
       {toggle && (
-        <MobileNavOverlay>
+        <MobileNavOverlay className={closing ? "closing" : ""}>
           <MobileContainer>
             <MobileNavLinks>
               {navLinks.map((link) => (
-                <MobileLinkItem key={link.name} to={link.path} end>
+                <MobileLinkItem
+                  key={link.name}
+                  to={link.path}
+                  end
+                  onClick={handleToggle}
+                >
                   {link.icon}
                   {link.name}
                 </MobileLinkItem>

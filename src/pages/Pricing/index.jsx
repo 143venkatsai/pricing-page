@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { IoCheckmarkCircle } from "react-icons/io5";
+import React, { useRef } from "react";
+
 import { BsFillXCircleFill, BsCheckCircleFill } from "react-icons/bs";
 
 import {
@@ -27,33 +26,8 @@ import packs from "../../data/packs";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { CalendarDays } from "lucide-react";
 
-// const companiesList = [
-//   { id: 1, src: "/paytm.png", alt: "Paytm" },
-//   { id: 2, src: "/netflix.png", alt: "Netflix" },
-//   { id: 3, src: "/meta.png", alt: "Meta" },
-//   { id: 4, src: "/microsoft.png", alt: "Microsoft" },
-//   { id: 5, src: "/infosys.png", alt: "Infosys" },
-//   { id: 6, src: "/google.png", alt: "Google" },
-//   { id: 7, src: "/agh.png", alt: "Aptitude Guru Hem" },
-//   { id: 8, src: "/amazon.png", alt: "Amazon" },
-//   { id: 9, src: "/capgemini.png", alt: "Capegemini" },
-//   { id: 10, src: "/wipro.png", alt: "Wipro" },
-//   { id: 11, src: "/adobe.png", alt: "Adobe" },
-//   { id: 12, src: "/flipkart.png", alt: "Flipkart" },
-//   { id: 13, src: "/tcs.png", alt: "TCS" },
-// ];
-
 const Pricing = () => {
   const scrollRef = useRef(null);
-  // const [showLeft, setShowLeft] = useState(false);
-  // const [showRight, setShowRight] = useState(false);
-
-  // const checkScroll = () => {
-  //   const el = scrollRef.current;
-  //   if (!el) return;
-  //   setShowLeft(el.scrollLeft > 0);
-  //   setShowRight(el.scrollWidth > el.clientWidth + el.scrollLeft + 5);
-  // };
 
   const scroll = (direction) => {
     const el = scrollRef.current;
@@ -65,25 +39,13 @@ const Pricing = () => {
     });
   };
 
-  // useEffect(() => {
-  //   const el = scrollRef.current;
-  //   if (!el) return;
-  //   checkScroll();
-  //   el.addEventListener("scroll", checkScroll);
-  //   window.addEventListener("resize", checkScroll);
-  //   return () => {
-  //     el.removeEventListener("scroll", checkScroll);
-  //     window.removeEventListener("resize", checkScroll);
-  //   };
-  // }, []);
-
   console.log(packs);
   return (
     <>
       <PricingContainer>
-        <img src="/star.png" alt="vector" className="star-image" />
         <img src="/spiral.png" alt="vector" className="spiral-image" />
         <div>
+          <img src="/star.png" alt="vector" className="star-image" />
           <h1>
             Discover <span>Features</span>,<br />
             <span>Choose</span> Your Plan
@@ -93,7 +55,15 @@ const Pricing = () => {
             <button>Explore Features</button>
           </ButtonsContainer>
         </div>
-        <img src="/LMS_image.png" alt="pricing" />
+        <div className="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/4z0XeCx0yEw?start=44"
+            title="LMS Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
       </PricingContainer>
 
       <FeaturesContainer>
@@ -138,6 +108,8 @@ const Pricing = () => {
 
       <PlansContainer>
         <div className="top-section">
+          <img src="/star.png" alt="vector" className="star-plan" />
+          <img src="/spiral-plan.png" alt="vector" className="spiral-plan" />
           <h1>
             Choose Your <span>Learning</span> <span>Plan</span>
           </h1>
@@ -148,7 +120,7 @@ const Pricing = () => {
         </div>
         <div className="plans-wrapper">
           <button className="arrow left-arrow" onClick={() => scroll("left")}>
-            <FaChevronLeft size={20} />
+            <FaChevronLeft size={12} />
           </button>
 
           <div className="plans-scroll" ref={scrollRef}>
@@ -209,39 +181,13 @@ const Pricing = () => {
           </div>
 
           <button className="arrow right-arrow" onClick={() => scroll("right")}>
-            <FaChevronRight size={20} />
+            <FaChevronRight size={12} />
           </button>
         </div>
       </PlansContainer>
 
       <CompaniesSection>
-        {/* <CompaniesContainer>
-          <div className="left-section">
-            <CompaniesList>
-              {companiesList.slice(0, 4).map((company) => (
-                <Company key={company.id}>
-                  <img src={company.src} alt={company.alt} />
-                </Company>
-              ))}
-            </CompaniesList>
-            <CompaniesList>
-              {companiesList.slice(4, 9).map((company) => (
-                <Company key={company.id} value={company.id}>
-                  <img src={company.src} alt={company.alt} />
-                </Company>
-              ))}
-            </CompaniesList>
-
-            <CompaniesList>
-              {companiesList.slice(9, 13).map((company) => (
-                <Company key={company.id}>
-                  <img src={company.src} alt={company.alt} />
-                </Company>
-              ))}
-            </CompaniesList>
-          </div>
-        </CompaniesContainer> */}
-        <img src="src/assets/companies.png" alt="companies" />
+        <img src="/companies.png" alt="companies" />
         <RightSection>
           <h1>
             Want More <span>Focused</span> <span>Preparation?</span>

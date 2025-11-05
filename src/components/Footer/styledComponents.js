@@ -13,6 +13,12 @@ export const FooterContainer = styled.div`
     padding: 40px 20px;
     gap: 40px;
   }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: row;
+  }
 `;
 
 export const FooterSection = styled.div`

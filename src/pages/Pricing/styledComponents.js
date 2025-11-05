@@ -12,20 +12,30 @@ export const PricingContainer = styled.div`
     padding: 100px 24px 40px 24px;
   }
 
-  .star-image {
-    position: absolute;
-    top: 160px;
-    left: 60px;
-    height: 50px;
-    width: 50px;
-  }
+  .video-wrapper {
+    position: relative;
+    width: 600px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
 
-  .spiral-image {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    height: 80px;
-    width: 80px;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @media screen and (min-width: 787px) and (max-width: 1024px) {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      order: 1;
+    }
+
+    @media screen and (max-width: 786px) {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      order: 1;
+    }
   }
 
   div {
@@ -60,6 +70,22 @@ export const PricingContainer = styled.div`
     }
   }
 
+  .star-image {
+    position: absolute;
+    top: -35px;
+    left: -45px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .spiral-image {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 80px;
+    width: 80px;
+  }
+
   img {
     width: 600px;
     height: auto;
@@ -81,8 +107,8 @@ export const PricingContainer = styled.div`
     }
 
     .star-image {
-      top: 680px;
-      left: 260px;
+      top: -10px;
+      left: -60px;
       height: 46px;
       width: 46px;
     }
@@ -118,8 +144,8 @@ export const PricingContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     .star-image {
-      top: 300px;
-      left: 24px;
+      top: -15px;
+      left: -15px;
       height: 23px;
       width: 23px;
     }
@@ -255,7 +281,7 @@ export const FeaturesContainer = styled.div`
   }
 
   @media screen and (min-width: 787px) and (max-width: 1024px) {
-    padding: 25px 50px 70px 50px;
+    padding: 25px 50px 0px 50px;
 
     div {
       h1 {
@@ -388,6 +414,7 @@ export const PlansContainer = styled.div`
   align-items: center;
   gap: 56px;
   padding: 0 100px 100px 100px;
+  position: relative;
 
   @media screen and (min-width: 787px) and (max-width: 1024px) {
     padding: 0 50px 70px 50px;
@@ -402,6 +429,44 @@ export const PlansContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    .star-plan {
+      height: 52px;
+      width: 52px;
+      position: absolute;
+      top: -30px;
+
+      @media screen and (max-width: 768px) {
+        top: -20px;
+        left: 0px;
+        height: 35px;
+        width: 35px;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        top: 40px;
+      }
+    }
+
+    .spiral-plan {
+      height: 200px;
+      width: 120px;
+      position: absolute;
+      right: 0;
+      top: -60px;
+
+      @media screen and (max-width: 768px) {
+        height: 75px;
+        width: 40px;
+        top: 0;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        top: 90px;
+        height: 130px;
+        width: 80px;
+      }
+    }
 
     // @media screen and (max-width: 786px) {
     //   padding: 0 24px 40px 24px;
@@ -459,9 +524,9 @@ export const PlansContainer = styled.div`
 
   /* Tablet view (787px to 1024px) */
   @media screen and (min-width: 787px) and (max-width: 1024px) {
-    padding: 140px 50px 70px 50px;
+    padding: 70px 50px 70px 50px;
     flex-direction: column;
-    gap: 32px;
+    gap: 56px;
     align-items: center;
     text-align: center;
 
@@ -565,7 +630,7 @@ export const PlansContainer = styled.div`
     }
   }
 
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 1024px) {
     .plans-wrapper {
       overflow: visible;
 
@@ -769,18 +834,33 @@ export const Plan = styled.div`
   .features {
     width: 100%;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
     h4 {
-      font-size: 14px;
-      color: #0f172a;
-      margin-bottom: 8px;
+      font-family: Poppins, sans-serif;
       font-weight: 600;
+      font-size: 14px;
+      line-height: 17.92px;
+      letter-spacing: 0%;
+      color: #262626;
+      margin: 0;
     }
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
       li {
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
         font-size: 14px;
-        padding: 4px 0;
+        line-height: 19.2px;
+        letter-spacing: 0%;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -794,9 +874,16 @@ export const Plan = styled.div`
     background: transparent;
     border: 2px solid #fc2947;
     color: #fc2947;
-    font-weight: 600;
-    padding: 10px 0;
-    border-radius: 8px;
+    order: 2;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    height: 40px;
+    padding: 8px 24px;
+    border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
     &:hover {
@@ -806,8 +893,8 @@ export const Plan = styled.div`
   }
 
   &.recommended {
-    border: 2px solid #fc2947;
-    box-shadow: 0 0 20px rgba(252, 41, 71, 0.1);
+    border: 1px solid #bcbcbc;
+    box-shadow: 0px 0px 1.5px 0px var(--YellowYellow-300);
     // transform: scale(1.05);
     // transform-origin: center;
     // z-index: 2000;
@@ -815,6 +902,12 @@ export const Plan = styled.div`
 
     .title {
       margin-top: 20px;
+    }
+
+    .buy-btn {
+      background-color: #fc2947;
+      color: #fff;
+      border: none;
     }
   }
 `;
@@ -850,6 +943,13 @@ export const CompaniesSection = styled.div`
 
     img {
       width: 100%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 786px) {
+    img {
+      width: 70%;
       height: auto;
     }
   }
@@ -951,6 +1051,11 @@ export const RightSection = styled.div`
       font-size: 24px;
       line-height: 140%;
     }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      font-size: 32px;
+      line-height: 140%;
+    }
   }
 
   p {
@@ -987,9 +1092,16 @@ export const PackContainer = styled.div`
     right: 400px;
     top: 80px;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 768px) {
       right: 10px;
       top: 60px;
+      width: 29px;
+      height: 29px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      right: 90px;
+      top: 80px;
       width: 29px;
       height: 29px;
     }
@@ -1001,9 +1113,16 @@ export const PackContainer = styled.div`
     height: 200px;
     left: 0px;
     top: 0px;
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 768px) {
       left: -10px;
       top: -20px;
+      width: 50px;
+      height: 100px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      left: 0;
+      top: 20px;
       width: 50px;
       height: 100px;
     }
@@ -1034,7 +1153,7 @@ export const PackContainer = styled.div`
         }
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1024px) {
         font-size: 32px;
         line-height: 130%;
       }
@@ -1080,6 +1199,10 @@ export const Pack = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
     padding: 20px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 40%;
   }
 
   h3 {
