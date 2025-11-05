@@ -6,7 +6,8 @@ export const PricingContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 160px 100px 100px 100px;
+  padding: 160px 120px 100px 120px;
+  background-color: #fdfdfd;
 
   @media (max-width: 768px) {
     padding: 100px 24px 40px 24px;
@@ -211,7 +212,7 @@ export const FeaturesContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 56px;
-  padding: 50px 100px 100px 100px;
+  padding: 50px 120px 100px 120px;
 
   @media screen and (max-width: 768px) {
     padding: 0 24px 40px 24px;
@@ -403,7 +404,7 @@ export const SectionDetails = styled.div`
   }
 
   @media screen and (min-width: 787px) and (max-width: 1024px) {
-    gap: 15px !important;
+    gap: 32px !important;
   }
 `;
 
@@ -413,7 +414,7 @@ export const PlansContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 56px;
-  padding: 0 100px 100px 100px;
+  padding: 50px 120px 100px 120px;
   position: relative;
 
   @media screen and (min-width: 787px) and (max-width: 1024px) {
@@ -434,7 +435,7 @@ export const PlansContainer = styled.div`
       height: 52px;
       width: 52px;
       position: absolute;
-      top: -30px;
+      top: 10px;
 
       @media screen and (max-width: 768px) {
         top: -20px;
@@ -630,7 +631,7 @@ export const PlansContainer = styled.div`
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 860px) {
     .plans-wrapper {
       overflow: visible;
 
@@ -656,9 +657,9 @@ export const PlanList = styled.div`
     scroll-behavior: smooth;
     gap: 16px;
     padding-bottom: 12px;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
     &::-webkit-scrollbar {
-      display: none; /* Chrome, Safari */
+      display: none;
     }
   }
 `;
@@ -916,7 +917,7 @@ export const CompaniesSection = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0px 100px 0px 100px;
+  padding: 0px 120px 0px 120px;
   align-items: center;
   gap: 56px;
 
@@ -1079,7 +1080,7 @@ export const PackContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 100px 100px 100px 100px;
+  padding: 100px 120px 100px 120px;
 
   @media screen and (max-width: 768px) {
     padding: 80px 24px 40px 24px;

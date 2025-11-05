@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CoursesContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 120px 100px 100px 100px;
+  padding: 120px 120px 100px 120px;
 
   @media (max-width: 768px) {
     padding: 100px 24px 100px 24px;
