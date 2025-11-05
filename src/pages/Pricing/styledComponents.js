@@ -32,6 +32,7 @@ export const PricingContainer = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    position: relative;
 
     h1 {
       font-family: Inter, sans-serif;
@@ -47,9 +48,14 @@ export const PricingContainer = styled.div`
           color: #fc2947;
         }
 
-        &:nth-child(2) {
+        &:nth-child(3) {
           color: #519ccd;
         }
+      }
+
+      @media screen and (min-width: 787px) and (max-width: 1024px) {
+        font-size: 40px;
+        line-height: 60px;
       }
     }
   }
@@ -61,8 +67,13 @@ export const PricingContainer = styled.div`
 
   @media screen and (min-width: 787px) and (max-width: 1024px) {
     padding: 140px 50px 70px 50px;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
 
     div {
+      order: 2;
       h1 {
         font-size: 40px;
         line-height: 60px;
@@ -70,19 +81,20 @@ export const PricingContainer = styled.div`
     }
 
     .star-image {
-      top: 120px;
-      left: 30px;
-      height: 30px;
-      width: 30px;
+      top: 680px;
+      left: 260px;
+      height: 46px;
+      width: 46px;
     }
 
     img {
-      width: 350px;
+      order: 1;
+      width: 100%;
       height: auto;
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 786px) {
     flex-direction: column;
     gap: 32px;
     align-items: center;
@@ -163,7 +175,7 @@ export const ButtonsContainer = styled.div`
 
     @media screen and (max-width: 768px) {
       font-size: 14px;
-      width: 146px;
+      width: 146px !important;
       height: 40px;
     }
   }
@@ -230,7 +242,7 @@ export const FeaturesContainer = styled.div`
   .section-two {
     margin-top: 40px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       margin-top: 10px;
       div {
         order: 2;
@@ -265,8 +277,12 @@ export const FeaturesSectionOne = styled.div`
   }
 
   @media screen and (min-width: 787px) and (max-width: 1024px) {
+    flex-direction: column !important;
+    gap: 32px !important;
+    align-items: center;
+
     img {
-      width: 400px;
+      width: 100%;
       height: auto;
     }
   }
@@ -370,7 +386,7 @@ export const PlansContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 56px;
   padding: 0 100px 100px 100px;
 
   @media screen and (min-width: 787px) and (max-width: 1024px) {
@@ -382,10 +398,14 @@ export const PlansContainer = styled.div`
     padding: 0 24px 40px 24px;
   }
 
-  div {
+  .top-section {
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    // @media screen and (max-width: 786px) {
+    //   padding: 0 24px 40px 24px;
+    // }
 
     h1 {
       font-family: Inter, sans-serif;
@@ -429,58 +449,373 @@ export const PlansContainer = styled.div`
       }
     }
   }
+
+  .plans-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Tablet view (787px to 1024px) */
+  @media screen and (min-width: 787px) and (max-width: 1024px) {
+    padding: 140px 50px 70px 50px;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    text-align: center;
+
+    div {
+      order: 2;
+      h1 {
+        font-size: 40px;
+        line-height: 60px;
+      }
+    }
+
+    img {
+      order: 1;
+      width: 100%;
+      height: auto;
+    }
+
+    .star-image {
+      top: 120px;
+      left: 30px;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  /* Mobile view */
+  @media screen and (max-width: 786px) {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    text-align: center;
+
+    div {
+      order: 2;
+      h1 {
+        font-size: 48px;
+        line-height: 140%;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      order: 1;
+    }
+  }
+
+  /* Scrollable plan list section */
+  .plans-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+
+    .plans-scroll {
+      display: flex;
+      flex-direction: row !important;
+      gap: 40px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+
+      @media screen and (max-width: 786px) {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        > div {
+          scroll-snap-align: center;
+        }
+      }
+    }
+
+    .plans-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .left-arrow {
+      left: -15px;
+    }
+
+    .right-arrow {
+      right: -15px;
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    .plans-wrapper {
+      overflow: visible;
+
+      .arrow {
+        display: none;
+      }
+    }
+  }
 `;
 
 export const PlanList = styled.div`
   display: flex;
   flex-direction: row !important;
-  gap: 40px;
-  margin-top: 20px;
-  overflow-x: auto;
-  overflow-y: visible;
-  padding-bottom: 10px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 24px;
+  position: relative;
 
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  // > div {
-  //   flex: 0 0 auto;
-  // }
-
-  @media (max-width: 1024px) {
-    gap: 24px;
-  }
-  @media (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     gap: 16px;
-    padding-bottom: 8px;
-    width: 100vw;
-    max-width: 100vw;
-    box-sizing: border-box;
-    margin-left: 0;
-    margin-right: 0;
+    padding-bottom: 12px;
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
   }
 `;
 
 export const Plan = styled.div`
-  box-shadow: 0px 0px 3.2px 0px #ffffff33;
+  position: relative;
   background-color: #f8f8f8;
+  border-radius: 16px;
+  width: 300px;
+  padding: 20px 24px;
+  box-shadow: 0px 0px 3.2px 0px #ffffff33;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding: 20px 24px;
-  width: 298px;
-  min-width: 250px;
-  max-width: 290px;
-  border-radius: 12px;
+  // align-items: center;
+  transition: all 0.3s ease-in-out;
+  gap: 24px;
 
-  @media (max-width: 768px) {
-    width: 225px;
-    min-width: 210px;
-    max-width: 240px;
-    gap: 20px;
-    padding: 16px 12px;
+  @media screen and (max-width: 786px) {
+    max-width: 80%;
+    width: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  // &:hover {
+  //   transform: translateY(-4px);
+  //   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  // }
+
+  .tag {
+    position: absolute;
+    top: -12px;
+    background: #fc2947;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    align-self: center;
+  }
+
+  .title {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+    color: #101010;
+    text-align: left;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .desc {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: left;
+    letter-spacing: -2%;
+    color: #515151;
+    margin: 0;
+  }
+
+  .price-box {
+    background: #ecf7ed;
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-align: left;
+    gap: 8px;
+
+    .original {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17.6px;
+        letter-spacing: 0%;
+        color: #515151;
+      }
+
+      p {
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17.6px;
+        letter-spacing: 0%;
+        text-decoration: line-through;
+        color: #515151;
+      }
+    }
+
+    .regular {
+      display: flex;
+      align-items: center;
+
+      span {
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17.6px;
+        letter-spacing: 0%;
+        color: #515151;
+      }
+
+      h3 {
+        font-family: Poppins, sans-serif;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 24px;
+        leading-trim: NONE;
+        line-height: 150%;
+        letter-spacing: -0.13px;
+        vertical-align: middle;
+        color: #059669;
+        margin: 0;
+        margin-left: auto;
+        margin-right: 5px;
+      }
+
+      button {
+        border: none;
+        background-color: #357438;
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 120%;
+        letter-spacing: 0%;
+        color: #dcfce7;
+        padding: 4px 8px;
+        border-radius: 3.2px;
+      }
+    }
+  }
+
+  .validity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #60d366 0%, #00aa72 100%);
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    padding: 8px 16px;
+    gap: 8px;
+    border-radius: 4px;
+
+    span {
+      font-family: Poppins, sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0%;
+      color: #fff;
+
+      strong {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .features {
+    width: 100%;
+    text-align: left;
+    h4 {
+      font-size: 14px;
+      color: #0f172a;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        font-size: 14px;
+        padding: 4px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  }
+
+  .buy-btn {
+    width: 100%;
+    margin-top: 16px;
+    background: transparent;
+    border: 2px solid #fc2947;
+    color: #fc2947;
+    font-weight: 600;
+    padding: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background: #fc2947;
+      color: #fff;
+    }
+  }
+
+  &.recommended {
+    border: 2px solid #fc2947;
+    box-shadow: 0 0 20px rgba(252, 41, 71, 0.1);
+    // transform: scale(1.05);
+    // transform-origin: center;
+    // z-index: 2000;
+    // position: relative;
+
+    .title {
+      margin-top: 20px;
+    }
   }
 `;
 
@@ -492,79 +827,96 @@ export const CompaniesSection = styled.div`
   align-items: center;
   gap: 56px;
 
+  img {
+    width: 550px;
+    height: auto;
+  }
+
   @media screen and (min-width: 787px) and (max-width: 1024px) {
     padding: 0px 50px 0px 50px;
+    flex-direction: column;
+    gap: 32px;
+
+    img {
+      width: 60%;
+      height: auto;
+    }
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 20px 24px 0px 24px;
     gap: 32px;
-  }
-`;
 
-export const CompaniesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  .left-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-  }
-`;
-
-export const CompaniesList = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  @media (max-width: 768px) {
-    gap: 10px;
-  }
-`;
-
-export const Company = styled.div`
-  box-shadow: ${(props) =>
-    props.value !== 7 ? "3.6px 3.6px 13.23px 0px #0000001f" : "none"};
-  background-color: #ffffff;
-  border-radius: 18px;
-  height: 79px;
-  width: 79px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media screen and (max-width: 768px) {
-    height: 50px;
-    width: 50px;
-  }
-
-  @media screen and (min-width: 787px) and (max-width: 1024px) {
-    height: 60px;
-    width: 60px;
-  }
-
-  img {
-    height: ${(props) => (props.value === 7 ? "70px" : "50px")};
-    width: ${(props) => (props.value === 7 ? "70px" : "50px")};
-
-    @media screen and (max-width: 768px) {
-      height: ${(props) => (props.value === 7 ? "50px" : "30px")};
-      width: ${(props) => (props.value === 7 ? "50px" : "30px")};
-    }
-
-    @media screen and (min-width: 787px) and (max-width: 1024px) {
-      height: 50px;
-      width: 50px;
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 `;
+
+// export const CompaniesContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+
+//   .left-section {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 24px;
+//   }
+// `;
+
+// export const CompaniesList = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   gap: 20px;
+
+//   @media (max-width: 768px) {
+//     gap: 10px;
+//   }
+// `;
+
+// export const Company = styled.div`
+//   box-shadow: ${(props) =>
+//     props.value !== 7 ? "3.6px 3.6px 13.23px 0px #0000001f" : "none"};
+//   background-color: #ffffff;
+//   border-radius: 18px;
+//   height: 79px;
+//   width: 79px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   @media screen and (max-width: 768px) {
+//     height: 50px;
+//     width: 50px;
+//   }
+
+//   @media screen and (min-width: 787px) and (max-width: 1024px) {
+//     height: 60px;
+//     width: 60px;
+//   }
+
+//   img {
+//     height: ${(props) => (props.value === 7 ? "70px" : "50px")};
+//     width: ${(props) => (props.value === 7 ? "70px" : "50px")};
+
+//     @media screen and (max-width: 768px) {
+//       height: ${(props) => (props.value === 7 ? "50px" : "30px")};
+//       width: ${(props) => (props.value === 7 ? "50px" : "30px")};
+//     }
+
+//     @media screen and (min-width: 787px) and (max-width: 1024px) {
+//       height: 50px;
+//       width: 50px;
+//     }
+//   }
+// `;
 
 export const RightSection = styled.div`
   display: flex;
@@ -572,7 +924,7 @@ export const RightSection = styled.div`
   gap: 24px;
   width: 55%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 
