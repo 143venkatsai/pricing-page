@@ -13,7 +13,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   box-shadow: 0px 2px 4px 0px #0000001a;
   background-color: #fff;
-  z-index: 1000;
+  z-index: 2000;
   margin: 0;
 
   @media (max-width: 768px) {
