@@ -523,7 +523,6 @@ export const PlansContainer = styled.div`
     align-items: center;
   }
 
-  /* Tablet view (787px to 1024px) */
   @media screen and (min-width: 787px) and (max-width: 1024px) {
     padding: 70px 50px 70px 50px;
     flex-direction: column;
@@ -553,7 +552,6 @@ export const PlansContainer = styled.div`
     }
   }
 
-  /* Mobile view */
   @media screen and (max-width: 786px) {
     flex-direction: column;
     gap: 32px;
@@ -575,7 +573,6 @@ export const PlansContainer = styled.div`
     }
   }
 
-  /* Scrollable plan list section */
   .plans-wrapper {
     position: relative;
     width: 100%;
@@ -586,6 +583,7 @@ export const PlansContainer = styled.div`
       flex-direction: row !important;
       gap: 40px;
       overflow-x: auto;
+      overflow-y: visible !important;
       scroll-behavior: smooth;
 
       @media screen and (max-width: 786px) {
@@ -669,13 +667,21 @@ export const Plan = styled.div`
   background-color: #f8f8f8;
   border-radius: 16px;
   width: 300px;
-  padding: 20px 24px;
-  box-shadow: 0px 0px 3.2px 0px #ffffff33;
+  // padding: 20px 24px;
+  // box-shadow: 0px 0px 3.2px 0px #ffffff33;
   display: flex;
   flex-direction: column;
   // align-items: center;
   transition: all 0.3s ease-in-out;
   gap: 24px;
+  overflow: visible !important;
+
+  border: ${(props) => (props.activePlan ? "1px solid #bcbcbc" : "none")};
+  box-shadow: ${(props) =>
+    props.activePlan
+      ? "0px 0px 1.5px 0px var(--YellowYellow-300)"
+      : "box-shadow: 0px 0px 3.2px 0px #FFFFFF33"};
+  padding: ${(props) => (props.activePlan ? "30px 32px" : "20px 24px")};
 
   @media screen and (max-width: 786px) {
     max-width: 80%;
@@ -691,7 +697,7 @@ export const Plan = styled.div`
 
   .tag {
     position: absolute;
-    top: -12px;
+    top: -15px;
     background: #fc2947;
     color: #fff;
     font-size: 12px;
@@ -700,6 +706,7 @@ export const Plan = styled.div`
     border-radius: 12px;
     text-transform: uppercase;
     align-self: center;
+    overflow: visible;
   }
 
   .title {
@@ -894,17 +901,6 @@ export const Plan = styled.div`
   }
 
   &.recommended {
-    border: 1px solid #bcbcbc;
-    box-shadow: 0px 0px 1.5px 0px var(--YellowYellow-300);
-    // transform: scale(1.05);
-    // transform-origin: center;
-    // z-index: 2000;
-    // position: relative;
-
-    .title {
-      margin-top: 20px;
-    }
-
     .buy-btn {
       background-color: #fc2947;
       color: #fff;

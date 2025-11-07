@@ -15,6 +15,7 @@ const pricingPlans = [
       { text: "Extra Premium Problems", enabled: false },
     ],
     recommended: false,
+    type: "basic",
   },
   {
     name: "Premium Plan",
@@ -32,6 +33,7 @@ const pricingPlans = [
       { text: "Extra Premium Problems", enabled: true },
     ],
     recommended: true,
+    type: "premium",
   },
   {
     name: "Elite Plan",
@@ -49,6 +51,7 @@ const pricingPlans = [
       { text: "Extra Premium Problems", enabled: true },
     ],
     recommended: false,
+    type: "elite",
   },
 ];
 

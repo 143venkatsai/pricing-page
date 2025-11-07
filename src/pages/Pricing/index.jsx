@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import { BsFillXCircleFill, BsCheckCircleFill } from "react-icons/bs";
 
@@ -28,6 +28,7 @@ import { CalendarDays } from "lucide-react";
 
 const Pricing = () => {
   const scrollRef = useRef(null);
+  const [selectPlan, setSelectPlan] = useState("premium");
 
   const scroll = (direction) => {
     const el = scrollRef.current;
@@ -129,6 +130,8 @@ const Pricing = () => {
               <Plan
                 key={index}
                 className={plan.recommended ? "recommended" : ""}
+                onClick={() => setSelectPlan(plan.type)}
+                activePlan={selectPlan === plan.type}
               >
                 {plan.recommended && <div className="tag">Recommended</div>}
 
