@@ -414,7 +414,7 @@ export const PlansContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 36px;
-  padding: 50px 120px 100px 120px;
+  padding: 50px 120px 70px 120px;
   position: relative;
 
   @media screen and (min-width: 787px) and (max-width: 1024px) {
@@ -923,7 +923,7 @@ export const CompaniesSection = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 20px 24px 0px 24px;
+    padding: 0px 24px 0px 24px;
     gap: 32px;
 
     img {
