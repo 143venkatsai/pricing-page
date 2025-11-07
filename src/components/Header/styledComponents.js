@@ -122,7 +122,7 @@ export const MobileNavOverlay = styled.div`
   // max-width: 320px;
   height: calc(100vh - 60px);
   background-color: #ffffff;
-  z-index: 2000;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
