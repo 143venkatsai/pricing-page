@@ -587,7 +587,9 @@ export const PlansContainer = styled.div`
       overflow-y: visible !important;
       scroll-behavior: smooth;
       position: relative;
-      padding-top: 28px;
+      padding: 38px 20px 40px 20px;
+      // padding-bottom: 40px;
+      align-items: flex-start;
 
       @media screen and (max-width: 786px) {
         display: flex;
@@ -634,33 +636,11 @@ export const PlansContainer = styled.div`
 
   @media screen and (min-width: 860px) {
     .plans-wrapper {
-      overflow: visible;
+      overflow: visible !important;
 
       .arrow {
         display: none;
       }
-    }
-  }
-`;
-
-export const PlanList = styled.div`
-  display: flex;
-  flex-direction: row !important;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 24px;
-  position: relative;
-
-  @media screen and (max-width: 1024px) {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 16px;
-    padding-bottom: 12px;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
     }
   }
 `;
@@ -675,14 +655,16 @@ export const Plan = styled.div`
   transition: all 0.3s ease-in-out;
   gap: 24px;
   overflow: visible !important;
+  padding: 20px 24px;
 
   border: ${(props) => (props.activePlan ? "1px solid #bcbcbc" : "none")};
   box-shadow: ${(props) =>
     props.activePlan
       ? "0px 0px 1.5px 0px var(--YellowYellow-300)"
       : "box-shadow: 0px 0px 3.2px 0px #FFFFFF33"};
-  padding: ${(props) => (props.activePlan ? "30px 32px" : "20px 24px")};
-  // transform: ${(props) => (props.activePlan ? "scale(1.05)" : "scale(1)")};
+  // padding: ${(props) => (props.activePlan ? "30px 32px" : "20px 24px")};
+  transform: ${(props) => (props.activePlan ? "scale(1.02)" : "scale(1)")};
+  // z-index: ${(props) => (props.activePlan ? 2 : 1)};
 
   @media screen and (max-width: 786px) {
     max-width: 80%;
@@ -705,9 +687,14 @@ export const Plan = styled.div`
     font-weight: 600;
     padding: 6px 16px;
     border-radius: 12px;
-    text-transform: uppercase;
     align-self: center;
     overflow: visible;
+  }
+
+  .plan-top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .title {
@@ -790,7 +777,7 @@ export const Plan = styled.div`
         color: #059669;
         margin: 0;
         margin-left: auto;
-        margin-right: 5px;
+        margin-right: 8px;
       }
 
       button {

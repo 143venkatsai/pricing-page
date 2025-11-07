@@ -14,7 +14,6 @@ import {
   PacksGrid,
   PackTopSection,
   Plan,
-  PlanList,
   PlansContainer,
   PricingContainer,
   RightSection,
@@ -134,10 +133,10 @@ const Pricing = () => {
                 activePlan={selectPlan === plan.type}
               >
                 {plan.recommended && <div className="tag">Recommended</div>}
-
-                <h2 className="title">{plan.name}</h2>
-                <p className="desc">{plan.description}</p>
-
+                <div className="plan-top">
+                  <h2 className="title">{plan.name}</h2>
+                  <p className="desc">{plan.description}</p>
+                </div>
                 <div className="price-box">
                   <div className="original">
                     <span>Original</span>
