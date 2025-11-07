@@ -413,7 +413,7 @@ export const PlansContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 56px;
+  gap: 36px;
   padding: 50px 120px 100px 120px;
   position: relative;
 
@@ -577,6 +577,7 @@ export const PlansContainer = styled.div`
     position: relative;
     width: 100%;
     overflow: visible;
+    overflow-y: visible !important;
 
     .plans-scroll {
       display: flex;
@@ -585,6 +586,8 @@ export const PlansContainer = styled.div`
       overflow-x: auto;
       overflow-y: visible !important;
       scroll-behavior: smooth;
+      position: relative;
+      padding-top: 28px;
 
       @media screen and (max-width: 786px) {
         display: flex;
@@ -667,11 +670,8 @@ export const Plan = styled.div`
   background-color: #f8f8f8;
   border-radius: 16px;
   width: 300px;
-  // padding: 20px 24px;
-  // box-shadow: 0px 0px 3.2px 0px #ffffff33;
   display: flex;
   flex-direction: column;
-  // align-items: center;
   transition: all 0.3s ease-in-out;
   gap: 24px;
   overflow: visible !important;
@@ -682,6 +682,7 @@ export const Plan = styled.div`
       ? "0px 0px 1.5px 0px var(--YellowYellow-300)"
       : "box-shadow: 0px 0px 3.2px 0px #FFFFFF33"};
   padding: ${(props) => (props.activePlan ? "30px 32px" : "20px 24px")};
+  // transform: ${(props) => (props.activePlan ? "scale(1.05)" : "scale(1)")};
 
   @media screen and (max-width: 786px) {
     max-width: 80%;
