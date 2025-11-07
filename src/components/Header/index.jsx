@@ -68,13 +68,13 @@ const Header = () => {
     }
   };
 
-  useEffect(() => {
-    if (toggle) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [toggle]);
+  // useEffect(() => {
+  //   if (toggle) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "auto";
+  //   }
+  // }, [toggle]);
 
   return (
     <>
